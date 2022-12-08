@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<record model="ir.rule" id="student_rule">
+		<field name="name">Rule For Student</field>
+		<field name="model_id" ref="model_student_student" />
+		<field name="global" eval="True" />
+		<!--<field name="groups" eval="[(4,ref('student.group_user'))]" />-->
+		<field name="domain_force">[('age','=',24)]</field>
+		<field name="perm_read" eval="1" />
+		<field name="perm_write" eval="1" />
+		<field name="perm_unlink" eval="1" />
+		<field name="perm_create" eval="1" />
+	</record>
+
+</odoo>

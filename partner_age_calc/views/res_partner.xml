@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<!--Inherit Form View-->
+	<record id="res_partner_form_view" model="ir.ui.view">
+		<field name="name">Res Partner Form View</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_form" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='vat']" position="after">
+				<field name="birth_date" attrs="{'invisible':[('customer','!=',True)]}" />
+			</xpath>
+			<xpath expr="//field[@name='birth_date']" position="after">
+				<field name="age" attrs="{'invisible':[('customer','!=',True)]}" />
+			</xpath>
+		</field>
+	</record>
+
+	<!--Inherit Tree View-->
+	<record id="res_partner_tree_view" model="ir.ui.view">
+		<field name="name">Res Partner Tree View</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.view_partner_tree" />
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='display_name']" position="after">
+				<field name="customer" invisible="True" />
+				<field name="birth_date" attrs="{'invisible':[('customer','!=',True)]}" />
+			</xpath>
+		</field>
+	</record>
+
+	<!--Inherit Kanban View-->
+	<record id="res_partner_kanban_view" model="ir.ui.view">
+		<field name="name">Res Partner Kanban View</field>
+		<field name="model">res.partner</field>
+		<field name="inherit_id" ref="base.res_partner_kanban_view" />
+		<field name="arch" type="xml">
+			<xpath expr="//div[@class='oe_kanban_partner_links']" position="after">
+				<field name="birth_date" />
+			</xpath>
+		</field>
+	</record>
+
+</odoo>

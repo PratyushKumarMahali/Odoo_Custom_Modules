@@ -1,0 +1,337 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* student
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-17 18:07+0000\n"
+"PO-Revision-Date: 2022-11-17 18:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: student
+#: model:mail.template,body_html:student.student_accept_email_template
+msgid "\n"
+"				\n"
+"				Dear ${object.name}, <br/>\n"
+"				Congratulations, you are accepted to join the school '${object.school_id.name}'. <br/>\n"
+"				Regards.\n"
+"				\n"
+"			"
+msgstr "\n"
+"				\n"
+"				प्रिय ${object.name}, <br/>\n"
+"				बधाई हो, आपको '${object.school_id.name}' विद्यालय में शामिल होने के लिए स्वीकार किया जाता है। <br/>\n"
+"				सादर।\n"
+"				\n"
+
+#. module: student
+#: model:mail.template,body_html:student.student_reject_email_template
+msgid "\n"
+"				\n"
+"				Dear ${object.name}, <br/>\n"
+"				Sorry, you are not accepted to join the school '${object.school_id.name}'. <br/>\n"
+"				Regards.\n"
+"				\n"
+"			"
+msgstr "\n"
+"				\n"
+"				प्रिय ${object.name}, <br/>\n"
+"				क्षमा करें, आपको '${object.school_id.name}' विद्यालय में शामिल होने के लिए स्वीकार नहीं किया जाता है। <br/>\n"
+"				सादर।\n"
+"				\n"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_form
+msgid "Accept Student"
+msgstr "विद्यार्थी स्वीकार करें"
+
+#. module: student
+#: selection:student.student,status:0
+msgid "Accepted"
+msgstr "स्वीकृत"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__address
+#: model:ir.model.fields,field_description:student.field_student_wizard__address
+msgid "Address"
+msgstr "पता"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_res_partner__age
+#: model:ir.model.fields,field_description:student.field_res_users__age
+#: model:ir.model.fields,field_description:student.field_student_student__age
+msgid "Age"
+msgstr "आयु"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_search_view
+msgid "Age Above 20"
+msgstr "उम्र 20 से ऊपर"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_search_view
+msgid "Age Below 20"
+msgstr "उम्र 20 से कम"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__average
+msgid "Average"
+msgstr "औसत"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__city
+#: model:ir.model.fields,field_description:student.field_student_wizard__city
+msgid "City"
+msgstr "शहर"
+
+#. module: student
+#: model:mail.template,subject:student.student_accept_email_template
+msgid "Congratulations!!!"
+msgstr "बधाई हो!!!"
+
+#. module: student
+#: model:ir.model,name:student.model_res_partner
+msgid "Contact"
+msgstr "संपर्क"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__create_uid
+#: model:ir.model.fields,field_description:student.field_student_option__create_uid
+#: model:ir.model.fields,field_description:student.field_student_student__create_uid
+#: model:ir.model.fields,field_description:student.field_student_wizard__create_uid
+msgid "Created by"
+msgstr "के द्वारा बनाई गई"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__create_date
+#: model:ir.model.fields,field_description:student.field_student_option__create_date
+#: model:ir.model.fields,field_description:student.field_student_student__create_date
+#: model:ir.model.fields,field_description:student.field_student_wizard__create_date
+msgid "Created on"
+msgstr "पर बनाया"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__display_name
+#: model:ir.model.fields,field_description:student.field_student_option__display_name
+#: model:ir.model.fields,field_description:student.field_student_student__display_name
+#: model:ir.model.fields,field_description:student.field_student_wizard__display_name
+msgid "Display Name"
+msgstr "प्रदर्शित होने वाला नाम"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__email
+msgid "Email"
+msgstr "ईमेल"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_res_partner__gstin
+#: model:ir.model.fields,field_description:student.field_res_users__gstin
+msgid "GST-IN"
+msgstr "जीएसटी-ऐन"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_form
+msgid "General Information"
+msgstr "सामान्य जानकारी"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__greetings
+msgid "Greetings"
+msgstr "अभिवादन"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__id
+#: model:ir.model.fields,field_description:student.field_student_option__id
+#: model:ir.model.fields,field_description:student.field_student_student__id
+#: model:ir.model.fields,field_description:student.field_student_wizard__id
+msgid "ID"
+msgstr "पहचान"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__student_inscription_id
+msgid "Inscription ID"
+msgstr "शिलालेख पहचान"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__join_date
+msgid "Join Date"
+msgstr "संलग्न तिथि"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school____last_update
+#: model:ir.model.fields,field_description:student.field_student_option____last_update
+#: model:ir.model.fields,field_description:student.field_student_student____last_update
+#: model:ir.model.fields,field_description:student.field_student_wizard____last_update
+msgid "Last Modified on"
+msgstr "अंतिम बार संशोधित"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__write_uid
+#: model:ir.model.fields,field_description:student.field_student_option__write_uid
+#: model:ir.model.fields,field_description:student.field_student_student__write_uid
+#: model:ir.model.fields,field_description:student.field_student_wizard__write_uid
+msgid "Last Updated by"
+msgstr "द्वारा अंतिम अद्यतन किया गया"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__write_date
+#: model:ir.model.fields,field_description:student.field_student_option__write_date
+#: model:ir.model.fields,field_description:student.field_student_student__write_date
+#: model:ir.model.fields,field_description:student.field_student_wizard__write_date
+msgid "Last Updated on"
+msgstr "अंतिम बार अद्यतन किया गया"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_res_partner__message
+#: model:ir.model.fields,field_description:student.field_res_users__message
+#: model:ir.model.fields,field_description:student.field_student_student__message_onchange
+msgid "Message"
+msgstr "संदेश"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__name
+#: model:ir.model.fields,field_description:student.field_student_option__name
+#: model:ir.model.fields,field_description:student.field_student_student__name
+msgid "Name"
+msgstr "नाम"
+
+#. module: student
+#: selection:student.student,status:0
+msgid "New"
+msgstr "नया"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__note_1
+msgid "Note 1"
+msgstr "टिप्पणी 1"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__note_2
+msgid "Note 2"
+msgstr "टिप्पणी 2"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__note_3
+msgid "Note 3"
+msgstr "टिप्पणी 3"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__note_4
+msgid "Note 4"
+msgstr "टिप्पणी 4"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_form
+msgid "Notes"
+msgstr "टिप्पणियाँ"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__option_ids
+msgid "Options"
+msgstr "विकल्प"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_wizard_view
+msgid "Reject"
+msgstr "अस्वीकार"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_form
+msgid "Reject Student"
+msgstr "विद्यार्थी को अस्वीकार करें"
+
+#. module: student
+#: selection:student.student,status:0
+msgid "Rejected"
+msgstr "अस्वीकृत"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_wizard_view
+msgid "Save"
+msgstr "बचाना"
+
+#. module: student
+#: model:ir.actions.act_window,name:student.school_action
+#: model:ir.model.fields,field_description:student.field_student_student__school_id
+#: model:ir.ui.menu,name:student.school_menu
+#: model_terms:ir.ui.view,arch_db:student.student_search_view
+msgid "School"
+msgstr "विद्यालय"
+
+#. module: student
+#: model:mail.template,subject:student.student_reject_email_template
+msgid "Sorry!!!"
+msgstr "माफ़ कीजिये!!!"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_student_student__status
+#: model_terms:ir.ui.view,arch_db:student.student_search_view
+msgid "Status"
+msgstr "स्थिति"
+
+#. module: student
+#: model:ir.actions.act_window,name:student.student_action
+#: model:ir.ui.menu,name:student.menu
+msgid "Student"
+msgstr "विद्यार्थी"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_form
+msgid "Student Address"
+msgstr "विद्यार्थी का पता"
+
+#. module: student
+#: model:ir.actions.server,name:student.student_cron_ir_actions_server
+#: model:ir.cron,cron_name:student.student_cron
+#: model:ir.cron,name:student.student_cron
+msgid "Student Cron"
+msgstr ""छात्र क्रोन
+
+#. module: student
+#: model:ir.model,name:student.model_student_wizard
+msgid "Student Wizard"
+msgstr "छात्र जादूगर"
+
+#. module: student
+#: model:ir.model.fields,field_description:student.field_school_school__student_ids
+msgid "Students"
+msgstr "छात्रों"
+
+#. module: student
+#: model:ir.actions.act_window,name:student.student_wizard_action
+#: model_terms:ir.ui.view,arch_db:student.student_form
+msgid "Update Student Information"
+msgstr "अद्यतन छात्र सूचना"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_search_view
+msgid "group by .."
+msgstr "समूह द्वारा .."
+
+#. module: student
+#: model:ir.model,name:student.model_school_school
+msgid "school.school"
+msgstr "विद्यालय.विद्यालय"
+
+#. module: student
+#: model_terms:ir.ui.view,arch_db:student.student_search_view
+msgid "student search"
+msgstr "छात्र खोज"
+
+#. module: student
+#: model:ir.model,name:student.model_student_option
+msgid "student.option"
+msgstr "विद्यालय.विकल्प"
+
+#. module: student
+#: model:ir.model,name:student.model_student_student
+msgid "student.student"
+msgstr "विद्यार्थी.विद्यार्थी"
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+	<!--NMT Public Content Form-->
+	<record id="nmt_public_content_form" model="ir.ui.view">
+		<field name="name">nmt.public.content.form</field>
+		<field name="model">nmt.public.content</field>
+		<field name="arch" type="xml">
+			<form string="Public Content">
+				<header>
+					<button name="preview" type="object" string="Preview" class="oe_highlight" />
+					<button name="action_button_space" type="object" string="Action Button Space" class="oe_highlight" />
+				</header>
+				<sheet>
+					<group>
+						<group>
+							<field name="campaign_id" />
+							<field name="client_id" />
+						</group>
+						<group>
+							<field name="responsible_id" />
+							<field name="create_date" string="Created On" />
+							<field name="create_uid" string="Created By" />
+						</group>
+					</group>
+					<notebook>
+						<page string="Public Content">
+							<group>
+								<group>
+									<field name="title" />
+									<field name="subtitle" />
+								</group>
+								<group>
+									<field name="kanban_background_image_id" />
+								</group>
+							</group>
+							<group>
+								<field name="banner_id" />
+								<field name="about_us" />
+								<field name="team_image_id" />
+								<field name="team_description" />
+								<field name="pitch" />
+							</group>
+						</page>
+					</notebook>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers" />
+					<field name="activity_ids" widget="mail_activity" />
+					<field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}" />
+				</div>
+			</form>
+		</field>
+	</record>
+
+	<!--NMT Public Content Tree-->
+	<record id="nmt_public_content_tree" model="ir.ui.view">
+		<field name="name">nmt.public.content.tree</field>
+		<field name="model">nmt.public.content</field>
+		<field name="arch" type="xml">
+			<tree string="Public Content">
+				<field name="campaign_id" />
+				<field name="client_id" />
+				<field name="responsible_id" />
+				<field name="create_date" string="Created On" />
+				<field name="create_uid" string="Created By" />
+			</tree>
+		</field>
+	</record>
+
+	<!--NMT Public Content Action-->
+	<record id="nmt_public_content_action" model="ir.actions.act_window">
+		<field name="name">Public Content</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">nmt.public.content</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<menuitem id="dashboard_menu" name="Dashboard" sequence="1" />
+	<menuitem id="public_content_menu" name="Public Content" sequence="1" parent="dashboard_menu" action="nmt_public_content_action" />
+
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+
+		<record id="student_wizard_action" model="ir.actions.act_window">
+			<field name="name">Update Student Information</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">student.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<record id="student_wizard_view" model="ir.ui.view">
+			<field name="name">student.wizard.form</field>
+			<field name="model">student.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<group>
+							<field name="address" />
+							<field name="city" />
+						</group>
+					</group>
+					<footer>
+						<button string="Save" name="update_student_information" type="object" class="btn-primary" />
+						<button string="Reject" class="btn-default" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+	</data>
+</odoo>

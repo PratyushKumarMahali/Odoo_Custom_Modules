@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+confirm_wizard_access,Confirm Wizard Access,model_confirm_wizard,,1,1,1,1
+
+confirm_wizard_lines_access,Confirm Wizard Lines Access,model_confirm_wizard_lines,,1,1,1,1

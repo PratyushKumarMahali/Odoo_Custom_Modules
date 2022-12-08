@@ -1,0 +1,21 @@
+{
+    'name': "nmt_dashboard",
+    'version': '15.0.1.0.0',
+    'depends': ['base', 'mail'],
+    'author': "Quocent",
+    'maintainer': "Quocent",
+    'website': "http://www.quocent.com",
+    'category': 'Uncategorized',
+    'license': 'LGPL-3',
+    'description': """sgc_lim-nmt""",
+    'summary': """sgc_lim-nmt""",
+    'data': [
+        'security/ir.model.access.csv',
+        'views/nmt_public_content.xml',
+        ],
+    'demo': [],
+    'sequence': 1,
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}

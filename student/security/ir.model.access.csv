@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+student_user_access,Student User Access,model_student_student,student.group_user,1,0,0,0
+student_manager_access,Student Manager Access,model_student_student,student.group_manager,1,1,1,0
+student_super_manager_access,Student Super Manager Access,model_student_student,student.group_super_manager,1,1,1,1
+
+school_user_access,School User Access,model_school_school,student.group_user,1,0,0,0
+school_manager_access,School Manager Access,model_school_school,student.group_manager,1,1,1,0
+school_super_manager_access,School Super Manager Access,model_school_school,student.group_super_manager,1,1,1,1
+
+student_option_user_access,Student Option User Access,model_student_option,student.group_user,1,0,0,0
+student_option_manager_access,Student Option Manager Access,model_student_option,student.group_manager,1,1,1,0
+student_option_super_manager_access,Student Option Super Manager Access,model_student_option,student.group_super_manager,1,1,1,1

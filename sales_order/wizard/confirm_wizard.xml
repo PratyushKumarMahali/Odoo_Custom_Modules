@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+	<record id="confirm_wizard_form" model="ir.ui.view">
+		<field name="name">confirm.wizard.form</field>
+		<field name="model">confirm.wizard</field>
+		<field name="arch" type="xml">
+			<form string="To the Selected Orders">
+				<div>To the Selected Orders</div>
+
+				<field name="orders_lines">
+					<tree editable="bottom">
+						<field name="product_id" />
+						<field name="description" />
+						<field name="product_uom_qty" />
+						<field name="price_unit" />
+						<field name="price_subtotal" />
+					</tree>
+				</field>
+
+				<footer>
+					<button string="Submit" name="add_product" type='object' class='btn-primary' />
+					<!--<button string="Sales Order" name="confirm_order" type='object' class='btn-success' />
+					<button string="Quotation" name="quote_order" type='object' class='btn-warning' />-->
+					<button string='Cancel' class='btn-danger' special='cancel' />
+				</footer>
+
+			</form>
+		</field>
+	</record>
+
+	<act_window name="Add Product" id="confirm_wizard_action" multi="True" res_model="confirm.wizard" src_model="sale.order" view_mode="form" view_type="form" target="new" />
+
+</odoo>
