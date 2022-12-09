@@ -2,6 +2,18 @@
 
 <odoo>
 
+	<!--Appointments in Action-->
+	<record id="action_patient_appointments" model="ir.actions.act_window">
+		<field name="name">Appointments</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">hospital.appointment</field>
+		<field name="domain">[('patient_inscription_id','=',active_id)]</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_id" ref="hospital.appointment_tree" />
+		<field name="binding_model_id" ref="model_hospital_patient" />
+	</record>
+
 	<!--Appointments Smart Button Action-->
 	<record model="ir.actions.act_window" id="patient_appointments">
 		<field name="name">Appointments</field>
@@ -17,6 +29,11 @@
 		<field name="model">hospital.patient</field>
 		<field name="arch" type="xml">
 			<form string="Patients">
+
+				<header>
+					<button name="%(create_appointment_wizard)d" string="Create Appointment" type="action" class="oe_highlight" context="{'default_patient_inscription_id':active_id}" />
+				</header>
+
 				<sheet>
 
 					<!--Smart Button-->
@@ -48,17 +65,21 @@
 						<group>
 							<field name="patient_gender" />
 							<field name="patient_birth_date" />
+							<field name="patient_email" />
 						</group>
 						<group>
 							<field name="patient_age" />
 							<field name="patient_age_group" />
+							<field name="patient_contact" />
 						</group>
 					</group>
 					<group>
 						<group>
-							<field name="doctor_inscription_id" />
+							<field name="doctor_inscription_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+							<field name="doctor_gender" />
 						</group>
 						<group>
+							<field name="user_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
 							<field name="patient_progress" />
 						</group>
 					</group>
@@ -80,6 +101,8 @@
 			<tree string="Patients">
 				<field name="patient_inscription_id" />
 				<field name="patient_name" />
+				<field name="patient_email" />
+				<field name="patient_contact" />
 				<field name="patient_gender" />
 				<field name="patient_birth_date" />
 				<field name="patient_age" class="text-left" />

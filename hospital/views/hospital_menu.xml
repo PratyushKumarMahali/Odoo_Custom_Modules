@@ -3,8 +3,10 @@
 <odoo>
 
 	<menuitem id="hospital_menu" name="Hospital" sequence="0" web_icon="hospital,static/description/menu.png" />
-	<menuitem id="patient_menu" name="Patients" sequence="1" parent="hospital_menu" action="patient_action" />
-	<menuitem id="appointment_menu" name="Appointments" sequence="2" parent="hospital_menu" action="appointment_action" />
-	<menuitem id="doctor_menu" name="Doctors" sequence="3" parent="hospital_menu" action="doctor_action" />
+		<menuitem id="patient_menu" name="Patients" sequence="1" parent="hospital_menu" action="patient_action" />
+		<menuitem id="appointment_menu" name="Appointments" sequence="2" parent="hospital_menu" action="appointment_action" />
+		<menuitem id="doctor_menu" name="Doctors" sequence="3" parent="hospital_menu" action="doctor_action" />
+		<menuitem id="wizard_menu" name="Wizards" sequence="4" parent="hospital_menu" />
+			<menuitem id="create_appointment_menu" name="Create Appointment" sequence="1" parent="wizard_menu" action="create_appointment_wizard" />
 
 </odoo>

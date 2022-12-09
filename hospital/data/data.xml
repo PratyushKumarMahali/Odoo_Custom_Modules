@@ -9,6 +9,8 @@
 			<field name="patient_gender">male</field>
 			<field name="patient_birth_date">11/26/1996</field>
 			<field name="patient_progress">P0</field>
+			<field name="patient_email">patient0@mail.com</field>
+			<field name="patient_contact">7654321</field>
 			<field name="doctor_inscription_id" ref="doctor_data" />
 		</record>
 	</data>
@@ -19,7 +21,6 @@
 			<field name="appointment_progress">A0</field>
 			<field name="appointment_date">01/01/2023</field>
 			<field name="state">confirm</field>
-			<field name="prescription">Needed Meds</field>
 			<field name="pharmacy">Available Meds</field>
 		</record>
 	</data>
@@ -30,6 +31,8 @@
 			<field name="doctor_name">Doctor0</field>
 			<field name="doctor_gender">female</field>
 			<field name="doctor_birth_date">05/26/1965</field>
+			<field name="doctor_email">doctor0@mail.com</field>
+			<field name="doctor_contact">9876543</field>
 		</record>
 	</data>
 

@@ -18,6 +18,8 @@
         'data/sequence_appointment.xml',
         'data/sequence_doctor.xml',
         'data/data.xml',
+        'data/mail_template.xml',
+        'wizards/create_appointment.xml',
         'views/patient.xml',
         'views/appointment.xml',
         'views/doctor.xml',

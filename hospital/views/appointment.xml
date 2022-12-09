@@ -27,12 +27,16 @@
 					</div>
 					<group>
 						<group>
-							<field name="patient_inscription_id" />
+							<field name="patient_inscription_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+							<field name="doctor_inscription_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+							<field name="doctor_gender" />
 							<field name="appointment_date" />
 						</group>
 						<group>
 							<field name="patient_gender" />
 							<field name="patient_age" />
+							<field name="patient_email" />
+							<field name="patient_contact" />
 						</group>
 					</group>
 					<group>
@@ -51,9 +55,9 @@
 
 								<tree editable="bottom">
 									<control>
-                                        <create string="Add a Medicine"/>
+										<create string="Add a Medicine" />
 									</control>
-									<field name="product_id" />
+									<field name="product_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
 									<field name="price_unit" />
 									<field name="product_qty" />
 									<field name="price_subtotal" sum="Total" />
@@ -103,10 +107,13 @@
 			<tree string="Appointments">
 				<field name="appointment_inscription_id" />
 				<field name="patient_inscription_id" />
+				<field name="patient_email" />
+				<field name="patient_contact" />
 				<field name="patient_gender" />
 				<field name="patient_age" class="text-center" />
 				<!--<field name="patient_age" sum="Total Age" />
 				<field name="patient_age" avg="Average Age" />-->
+				<field name="doctor_inscription_id" />
 				<field name="appointment_date" />
 				<field name="state" />
 			</tree>

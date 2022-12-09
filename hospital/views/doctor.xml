@@ -2,6 +2,18 @@
 
 <odoo>
 
+	<!--Patients in Action-->
+	<record id="action_doctor_patients" model="ir.actions.act_window">
+		<field name="name">Patients</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">hospital.patient</field>
+		<field name="domain">[('doctor_inscription_id','=',active_id)]</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="view_id" ref="hospital.patient_tree" />
+		<field name="binding_model_id" ref="model_hospital_doctor" />
+	</record>
+
 	<!--Patients Smart Button Action-->
 	<record model="ir.actions.act_window" id="doctor_patients">
 		<field name="name">Patients</field>
@@ -46,12 +58,14 @@
 					</div>
 					<group>
 						<group>
+							<field name="user_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
 							<field name="doctor_birth_date" />
-							<field name="doctor_age" />
+							<field name="doctor_email" />
 						</group>
 						<group>
 							<field name="doctor_gender" />
-							<field name="user_id" />
+							<field name="doctor_age" />
+							<field name="doctor_contact" />
 						</group>
 					</group>
 				</sheet>
@@ -75,6 +89,8 @@
 				<field name="doctor_gender" />
 				<field name="doctor_birth_date" />
 				<field name="doctor_age" class="text-left" />
+				<field name="doctor_email" />
+				<field name="doctor_contact" />
 				<field name="user_id" />
 			</tree>
 		</field>

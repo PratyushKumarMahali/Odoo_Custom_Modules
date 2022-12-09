@@ -20,9 +20,13 @@ class HospitalAppointment(models.Model):
     appointment_inscription_id = fields.Char(string='Appointment ID', required=True, copy=False, readonly=True, index=True, default=lambda self: _('New'))
     
     patient_inscription_id = fields.Many2one('hospital.patient', string="Patient", default=_get_default_id, required=True, track_visibility="always")
-    patient_gender = fields.Selection(string='Gender', related='patient_inscription_id.patient_gender', readonly=True, store=True)
-    patient_age = fields.Integer(string="Age", related='patient_inscription_id.patient_age', readonly=True)
+    patient_gender = fields.Selection(string='Patient Gender', related='patient_inscription_id.patient_gender', readonly=True, store=True)
+    patient_age = fields.Integer(string="Patient Age", related='patient_inscription_id.patient_age', readonly=True)
+    patient_email = fields.Char(string="Patient Email", related='patient_inscription_id.patient_email', readonly=True)
+    patient_contact = fields.Integer(string="Patient Contact", related='patient_inscription_id.patient_contact', readonly=True)
     patient_progress = fields.Text(string="Information", related='patient_inscription_id.patient_progress', readonly=True)
+    doctor_inscription_id = fields.Many2one('hospital.doctor', string="Doctor", related='patient_inscription_id.doctor_inscription_id', readonly=True, track_visibility="always")
+    doctor_gender = fields.Selection(string='Doctor Gender', related='patient_inscription_id.doctor_gender', readonly=True, store=True)
     appointment_progress = fields.Text(string="Progress", default=_get_default_appointment_progress, track_visibility="always")
     appointment_date = fields.Date(string="Appointment Date", required=True, track_visibility="always")
     

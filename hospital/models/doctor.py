@@ -23,8 +23,10 @@ class HospitalDoctor(models.Model):
     doctor_gender = fields.Selection([('male', 'Male'), ('female', 'Female'), ('other', 'Other')], string='Gender', required=True, store=True, track_visibility="always")
     doctor_birth_date = fields.Date(string="Birth Date", required=True, track_visibility="always")
     doctor_age = fields.Integer(string="Age", compute="_doctor_age", readonly=True, store=True, track_visibility="always", group_operator=False)
+    doctor_email = fields.Char(string="Email", default='text@mail.com', track_visibility="always")
+    doctor_contact = fields.Integer(string="Contact", track_visibility="always")
     
-    user_id = fields.Many2one('res.users', string='Related User')
+    user_id = fields.Many2one('res.users', default=_get_default_id, string='Related User')
     
     patient_count = fields.Integer(string="Patients", compute="get_patient_count")
     
@@ -51,6 +53,12 @@ class HospitalDoctor(models.Model):
         for record in self:
             if record.doctor_age <= 21:
                 raise ValidationError(_('Doctor with Age 21 or Below is not Employed!!!'))
+    
+    @api.constrains('doctor_contact')
+    def _doctor_contact_constrains(self):
+        for record in self:
+            if len(str(record.doctor_contact)) != 7:
+                raise ValidationError(_('Doctor Contact should be 7 Digits!!!'))
             
     @api.multi
     def doctor_patients(self):
@@ -67,3 +75,10 @@ class HospitalDoctor(models.Model):
     def get_patient_count(self):
         count = self.env['hospital.patient'].search_count([('doctor_inscription_id', '=', self.id)])
         self.patient_count = count
+        
+    @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            result.append((record.id, "%s - %s" % (record.doctor_inscription_id, record.doctor_name)))
+        return result
