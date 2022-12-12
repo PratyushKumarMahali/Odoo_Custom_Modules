@@ -7,11 +7,20 @@
 		<field name="name">Appointments</field>
 		<field name="type">ir.actions.act_window</field>
 		<field name="res_model">hospital.appointment</field>
-		<field name="domain">[('patient_inscription_id','=',active_id)]</field>
+		<field name="domain">[('patient_inscription_id','=',active_ids)]</field>
 		<field name="view_type">form</field>
 		<field name="view_mode">tree,form</field>
 		<field name="view_id" ref="hospital.appointment_tree" />
 		<field name="binding_model_id" ref="model_hospital_patient" />
+	</record>
+
+	<!--Send Cards in Action-->
+	<record id="action_send_cards" model="ir.actions.server">
+		<field name="name">Send Cards</field>
+		<field name="model_id" ref="model_hospital_patient" />
+		<field name="binding_model_id" ref="model_hospital_patient" />
+		<field name="state">code</field>
+		<field name="code">if records: action = records.action_send_card()</field>
 	</record>
 
 	<!--Appointments Smart Button Action-->
@@ -32,6 +41,7 @@
 
 				<header>
 					<button name="%(create_appointment_wizard)d" string="Create Appointment" type="action" class="oe_highlight" context="{'default_patient_inscription_id':active_id}" />
+					<button name="action_send_card" string="Send Card" type="object" class="oe_highlight" />
 				</header>
 
 				<sheet>
@@ -65,12 +75,12 @@
 						<group>
 							<field name="patient_gender" />
 							<field name="patient_birth_date" />
-							<field name="patient_email" />
+							<field name="patient_email" widget="email" />
 						</group>
 						<group>
 							<field name="patient_age" />
 							<field name="patient_age_group" />
-							<field name="patient_contact" />
+							<field name="patient_contact" widget="phone" />
 						</group>
 					</group>
 					<group>
@@ -101,8 +111,8 @@
 			<tree string="Patients">
 				<field name="patient_inscription_id" />
 				<field name="patient_name" />
-				<field name="patient_email" />
-				<field name="patient_contact" />
+				<field name="patient_email" widget="email" />
+				<field name="patient_contact" widget="phone" />
 				<field name="patient_gender" />
 				<field name="patient_birth_date" />
 				<field name="patient_age" class="text-left" />

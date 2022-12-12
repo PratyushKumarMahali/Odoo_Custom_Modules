@@ -58,14 +58,16 @@
 					</div>
 					<group>
 						<group>
+							<field name="doctor_name_upper" />
 							<field name="user_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
 							<field name="doctor_birth_date" />
-							<field name="doctor_email" />
+							<field name="doctor_email" widget="email" />
 						</group>
 						<group>
+							<field name="doctor_name_lower" />
 							<field name="doctor_gender" />
 							<field name="doctor_age" />
-							<field name="doctor_contact" />
+							<field name="doctor_contact" widget="phone" />
 						</group>
 					</group>
 				</sheet>
@@ -89,8 +91,8 @@
 				<field name="doctor_gender" />
 				<field name="doctor_birth_date" />
 				<field name="doctor_age" class="text-left" />
-				<field name="doctor_email" />
-				<field name="doctor_contact" />
+				<field name="doctor_email" widget="email" />
+				<field name="doctor_contact" widget="phone" />
 				<field name="user_id" />
 			</tree>
 		</field>

@@ -3,6 +3,17 @@
 <odoo>
 
 	<data noupdate="1">
+		<record id="doctor_data" model="hospital.doctor">
+			<field name="doctor_image" file="hospital/static/src/img/default_dp.png" type="base64" />
+			<field name="doctor_name">Doctor0</field>
+			<field name="doctor_gender">female</field>
+			<field name="doctor_birth_date">05/26/1965</field>
+			<field name="doctor_email">doctor0@mail.com</field>
+			<field name="doctor_contact">9876543</field>
+		</record>
+	</data>
+
+	<data noupdate="1">
 		<record id="patient_data" model="hospital.patient">
 			<field name="patient_image" file="hospital/static/src/img/default_dp.png" type="base64" />
 			<field name="patient_name">Patient0</field>
@@ -25,15 +36,4 @@
 		</record>
 	</data>
 	
-	<data noupdate="1">
-		<record id="doctor_data" model="hospital.doctor">
-			<field name="doctor_image" file="hospital/static/src/img/default_dp.png" type="base64" />
-			<field name="doctor_name">Doctor0</field>
-			<field name="doctor_gender">female</field>
-			<field name="doctor_birth_date">05/26/1965</field>
-			<field name="doctor_email">doctor0@mail.com</field>
-			<field name="doctor_contact">9876543</field>
-		</record>
-	</data>
-
 </odoo>

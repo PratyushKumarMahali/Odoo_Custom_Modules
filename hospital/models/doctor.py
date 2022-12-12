@@ -32,6 +32,23 @@ class HospitalDoctor(models.Model):
     
     active = fields.Boolean(string="Active", default=True)
     
+    doctor_name_upper = fields.Char(string="Name UPPER", compute="compute_upper_name", inverse="inverse_upper_name", track_visibility="always")
+    doctor_name_lower = fields.Char(string="Name lower", compute="compute_lower_name", track_visibility="always")
+    
+    @api.depends('doctor_name')
+    def compute_upper_name(self):
+        for record in self:
+            record.doctor_name_upper = record.doctor_name.upper() if record.doctor_name else False
+            
+    def inverse_upper_name(self):
+        for record in self:
+            record.doctor_name = record.doctor_name_upper.lower() if record.doctor_name_upper else False        
+            
+    @api.depends('doctor_name')
+    def compute_lower_name(self):
+        for record in self:
+            record.doctor_name_lower = record.doctor_name.lower() if record.doctor_name else False
+            
     @api.model
     def create(self, vals):
         if vals.get('doctor_inscription_id', _('New')) == _('New'):

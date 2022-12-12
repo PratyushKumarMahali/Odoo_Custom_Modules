@@ -98,3 +98,9 @@ class HospitalPatient(models.Model):
         for record in self:
             result.append((record.id, "%s - %s" % (record.patient_inscription_id, record.patient_name)))
         return result
+    
+    def action_send_card(self):
+        for record in self:
+            template_id = record.env.ref('hospital.patient_card_email_template').id
+            template = record.env['mail.template'].browse(template_id)
+            template.send_mail(record.id, force_send=True)

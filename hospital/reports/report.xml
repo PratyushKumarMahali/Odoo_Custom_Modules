@@ -2,6 +2,8 @@
 
 <odoo>
 	
-	<report id="report_patient_card" string="Patient Card" model="hospital.patient" report_type="qweb-pdf" menu="True" name="hospital.report_patient" file="hospital.report_patient" />
+	<report id="report_patient_card_pdf" string="Patient Card PDF" model="hospital.patient" report_type="qweb-pdf" menu="True" name="hospital.report_patient_pdf" file="hospital.report_patient_pdf" />
+
+	<report id="report_patient_card_xlsx" string="Patient Card XLSX" model="hospital.patient" report_type="xlsx" menu="True" name="hospital.report_patient_xlsx" file="hospital.report_patient_xlsx" />
 	
 </odoo>

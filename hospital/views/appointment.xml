@@ -35,8 +35,8 @@
 						<group>
 							<field name="patient_gender" />
 							<field name="patient_age" />
-							<field name="patient_email" />
-							<field name="patient_contact" />
+							<field name="patient_email" widget="email" />
+							<field name="patient_contact" widget="phone" />
 						</group>
 					</group>
 					<group>
@@ -107,8 +107,8 @@
 			<tree string="Appointments">
 				<field name="appointment_inscription_id" />
 				<field name="patient_inscription_id" />
-				<field name="patient_email" />
-				<field name="patient_contact" />
+				<field name="patient_email" widget="email" />
+				<field name="patient_contact" widget="phone" />
 				<field name="patient_gender" />
 				<field name="patient_age" class="text-center" />
 				<!--<field name="patient_age" sum="Total Age" />

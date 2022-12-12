@@ -22,8 +22,8 @@
 				]]>
 			</field>
 
-			<field name="report_template" ref="report_patient_card" />
-			<field name="report_name">Patient Card_${(object.patient_inscription_id)}</field>
+			<field name="report_template" ref="hospital.report_patient_card_pdf" />
+			<field name="report_name">Patient Card PDF_${(object.patient_inscription_id)}</field>
 
 		</record>
 
