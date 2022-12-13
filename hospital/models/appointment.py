@@ -6,7 +6,7 @@ class HospitalAppointment(models.Model):
     
     _name = 'hospital.appointment'
     _description = 'Appointment Record'
-    _rec_name = 'patient_inscription_id'
+    _rec_name = 'appointment_inscription_id'
     _order = "appointment_date desc"
     _inherit = ['mail.thread', 'mail.activity.mixin']
     

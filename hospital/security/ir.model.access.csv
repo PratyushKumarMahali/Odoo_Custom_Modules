@@ -7,3 +7,5 @@ appointment_record_access,Appointment Record Access,model_hospital_appointment,,
 appointment_lines_record_access,Appointment Lines Record Access,model_hospital_appointment_lines,,1,1,1,1
 
 doctor_record_access,Doctor Record Access,model_hospital_doctor,,1,1,1,1
+
+lab_record_access,Laboratory Record Access,model_hospital_lab,,1,1,1,1

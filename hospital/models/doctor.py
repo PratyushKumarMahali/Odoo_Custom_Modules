@@ -26,7 +26,7 @@ class HospitalDoctor(models.Model):
     doctor_email = fields.Char(string="Email", default='text@mail.com', track_visibility="always")
     doctor_contact = fields.Integer(string="Contact", track_visibility="always")
     
-    user_id = fields.Many2one('res.users', default=_get_default_id, string='Related User')
+    user_id = fields.Many2one('res.users', default=_get_default_id, string='Related User', readonly=True, track_visibility="always")
     
     patient_count = fields.Integer(string="Patients", compute="get_patient_count")
     

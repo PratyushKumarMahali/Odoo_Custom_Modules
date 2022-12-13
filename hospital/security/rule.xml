@@ -6,12 +6,24 @@
 		<field name="name">Patients Visible to Respective Doctors</field>
 		<field name="model_id" ref="model_hospital_patient" />
 		<field name="global" eval="True" />
-		<field name="groups" eval="[(4,ref('hospital.group_doctor'))]" />
-		<field name="domain_force">[('doctor_inscription_id.user_id','=',user.id)]</field>
-		<!--<field name="perm_read" eval="1" />
+		<field name="groups" eval="[(4,ref('hospital.group_doctor_user'))]" />
+		<field name="domain_force">[('user_id','=',user.id)]</field>
+		<field name="perm_read" eval="1" />
 		<field name="perm_write" eval="1" />
-		<field name="perm_unlink" eval="1" />
-		<field name="perm_create" eval="1" />-->
+		<field name="perm_unlink" eval="0" />
+		<field name="perm_create" eval="0" />
+	</record>
+	
+	<record model="ir.rule" id="laboratory_record_rule">
+		<field name="name">Record Visible to Respective Laboratory Assistant</field>
+		<field name="model_id" ref="model_hospital_lab" />
+		<field name="global" eval="True" />
+		<field name="groups" eval="[(4,ref('hospital.group_laboratory_assistant'))]" />
+		<field name="domain_force">[('user_id','=',user.id)]</field>
+		<field name="perm_read" eval="1" />
+		<field name="perm_write" eval="1" />
+		<field name="perm_unlink" eval="0" />
+		<field name="perm_create" eval="0" />
 	</record>
 
 </odoo>

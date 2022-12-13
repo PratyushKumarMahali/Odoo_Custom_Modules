@@ -58,13 +58,13 @@
 					</div>
 					<group>
 						<group>
-							<field name="doctor_name_upper" />
+							<field name="doctor_name_upper" groups="base.group_no_one" />
 							<field name="user_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
 							<field name="doctor_birth_date" />
 							<field name="doctor_email" widget="email" />
 						</group>
 						<group>
-							<field name="doctor_name_lower" />
+							<field name="doctor_name_lower" groups="base.group_no_one" />
 							<field name="doctor_gender" />
 							<field name="doctor_age" />
 							<field name="doctor_contact" widget="phone" />

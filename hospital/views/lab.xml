@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+	<!--Laboratory Form-->
+	<record id="lab_form" model="ir.ui.view">
+		<field name="name">hospital.lab.form</field>
+		<field name="model">hospital.lab</field>
+		<field name="arch" type="xml">
+			<form string="Laboratory">
+				<sheet>
+					<div class="oe_title">
+						<h1>
+							<field name="lab_inscription_id" />
+						</h1>
+					</div>
+					<group>
+						<group>
+							<field name="appointment_inscription_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+							<field name="patient_inscription_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+							<field name="doctor_inscription_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+						</group>
+						<group>
+							<field name="user_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" />
+							<field name="lab_result" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!--Laboratory Tree-->
+	<record id="lab_tree" model="ir.ui.view">
+		<field name="name">hospital.lab.tree</field>
+		<field name="model">hospital.lab</field>
+		<field name="arch" type="xml">
+			<tree string="Laboratory">
+				<field name="lab_inscription_id" />
+				<field name="appointment_inscription_id" />
+				<field name="patient_inscription_id" />
+				<field name="doctor_inscription_id" />
+				<field name="user_id" />
+				<field name="lab_result" />
+			</tree>
+		</field>
+	</record>
+
+	<!--Laboratory Action-->
+	<record id="lab_action" model="ir.actions.act_window">
+		<field name="name">Laboratory</field>
+		<field name="type">ir.actions.act_window</field>
+		<field name="res_model">hospital.lab</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="context">{}</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_smiling_face">No laboratory record found. Let's create one!!!</p>
+			<p>To get things done, use activities and status on laboratory.</p>
+		</field>
+	</record>
+
+</odoo>
