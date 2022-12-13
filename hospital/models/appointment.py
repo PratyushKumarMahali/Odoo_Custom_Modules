@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from datetime import date
 
 
 class HospitalAppointment(models.Model):
@@ -32,7 +33,7 @@ class HospitalAppointment(models.Model):
     
     state = fields.Selection([('draft', 'Draft'), ('confirm', 'Confirm'), ('done', 'Done'), ('cancel', 'Cancel')], string='Status', readonly=True, default='draft', track_visibility='onchange')
     
-    appointment_lines = fields.One2many('hospital.appointment.lines','appointment_inscription_id', string="Appointment Lines", track_visibility="always")
+    appointment_lines = fields.One2many('hospital.appointment.lines', 'appointment_inscription_id', string="Appointment Lines", track_visibility="always")
     
     pharmacy = fields.Char(string="Pharmacy")
     
@@ -58,3 +59,13 @@ class HospitalAppointment(models.Model):
     def action_draft(self):
         for record in self:
             record.state = 'draft'
+            
+    @api.model
+    def appointment_cron(self):
+        appointment = self.env['hospital.appointment'].search([])
+        template_id = self.env.ref('hospital.patient_card_email_template')
+        today = date.today()
+        for record in appointment:
+            if record.appointment_date:
+                if ((record['appointment_date'].year, record['appointment_date'].month, record['appointment_date'].day) == (today.year, today.month, today.day)):
+                    template_id.send_mail(record.patient_inscription_id.id, force_send=True)
