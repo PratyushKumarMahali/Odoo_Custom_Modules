@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+	    <record id="mail_template_email_otp" model="mail.template">
+	        <field name="name">Email OTP</field>
+	        <field name="model_id" ref="base.model_res_users"/>
+	        <field name="partner_to">{{ object.partner_id.id }}</field>
+	        <field name="email_to">{{ object.partner_id.email }}</field>
+	        <field name="email_from">"{{ object.company_id.name }}" &lt;{{ (object.company_id.email or user.email) }}&gt;</field>
+	        <field name="subject">[RSP] Login OTP</field>
+	        <field name="body_html" type="html">
+	            <p>
+	                Dear <t t-out="object.name or ''"/>,<br/><br/>
+	                Please use <h3><t t-out="object.auth_otp"/></h3> as OTP to Login into portal.
+	            </p>
+	        </field>
+	    </record>
+    </data>
+</odoo>

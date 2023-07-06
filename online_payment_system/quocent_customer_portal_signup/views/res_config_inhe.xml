@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="res_config_form_view_inherit" model="ir.ui.view">
+			<field name="name">res.config.form.view.inherit</field>
+			<field name="model">res.config.settings</field>
+			<field name="priority" eval="40" />
+			<field name="inherit_id" ref="base.res_config_settings_view_form" />
+			<field name="arch" type="xml">
+				<xpath expr="//div[hasclass('settings')]" position="inside">
+					<div class="app_settings_block" data-string="RSP Settings" string="RSP Settings" data-key="res_setting">
+						<h2>Captcha Setting</h2>
+						<div class="row mt16 o_settings_container" name="rsp_user_setting_container">
+							<div class="col-12 col-lg-6 o_setting_box" id="rsp_config">
+								<div class="o_setting_left_pane">
+									<field name="login_captcha" />
+								</div>
+								<div class="o_setting_right_pane">
+									<label string="Login Captcha" for="login_captcha" />
+									<div class="text-muted">Enable Captcha during Login</div>
+								</div>
+								<br></br>
+								<div class="o_setting_left_pane">
+									<field name="signup_captcha" />
+								</div>
+								<div class="o_setting_right_pane">
+									<label string="Signup Captcha" for="signup_captcha" />
+									<div class="text-muted">Enable Captcha during Signup</div>
+								</div>
+							</div>
+						</div>
+						<h2>Payment Due Date Setting</h2>
+						<div class="row mt16 o_settings_container" name="rsp_user_setting_container">
+							<div class="col-12 col-lg-6 o_setting_box" id="rsp_config">
+								<div class="o_setting_right_pane">
+									<span class="o_form_label">Extend Payment Due Date</span>
+									<div class="content-group">
+										<div class="text-muted mb8">Set the number of days to extend the Payment Due Date</div>
+										<field name="extend_pdd" />
+										<label for="extend_pdd" string="Days" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<h2>Recipient Setting</h2>
+						<div class="row mt16 o_settings_container" name="rsp_user_setting_container">
+							<div class="col-12 col-lg-6 o_setting_box" id="rsp_config">
+								<div class="o_setting_right_pane">
+									<span class="o_form_label">Recipient Email IDs</span>
+									<div class="content-group">
+										<div class="text-muted mb8">Set the Email IDs which will be notified post Payment</div>
+										<field name="recipient_email_ids" style="width: 250%;" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<h2>OTP Authentication</h2>
+		                <div class="row mt16 o_settings_container" id="rsp_user_setting_container">
+		                    <div class="col-12 col-lg-6 o_setting_box" id="rsp_config">
+		                        <div class="o_setting_left_pane">
+									<field name="enable_email_otp_login" />
+		                        </div>
+		                        <div class="o_setting_right_pane">
+		                            <label for="enable_email_otp_login" string="Email One Time Password (OTP)"/>
+		                            <div class="text-muted">Enable to Restrict User to Login by entering OTP sent via Email</div>
+		                        </div>
+		                        <br></br>
+		                        <div class="o_setting_right_pane">
+									<span class="o_form_label">Email OTP Expiration Duration</span>
+		                            <div class="content-group">
+			                            <div class="text-muted mb8">Set the number of minutes by which Email OTP will Expire</div>
+		                                <field name="email_otp_expire_duration" />
+										<label for="email_otp_expire_duration" string="Minutes" />
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+		<record id="rsp_res_config_action" model="ir.actions.act_window">
+			<field name="name">Settings</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.config.settings</field>
+			<field name="view_id" ref="res_config_form_view_inherit" />
+			<field name="view_mode">form</field>
+			<field name="target">inline</field>
+			<field name="context">{'module' : 'res_setting', 'bin_size': False}</field>
+		</record>
+		
+		<record id="sales_res_config_form_view_inherit" model="ir.ui.view">
+			<field name="name">sales.res.config.form.view.inherit</field>
+			<field name="model">res.config.settings</field>
+			<field name="arch" type="xml">
+				<form string="Settings" class="oe_form_configuration o_base_settings" js_class="base_settings">
+					<div class="o_control_panel">
+						<div class="o_panel">
+							<ol role="navigation" class="breadcrumb o_settings_title d-none d-md-block">
+								<li class="breadcrumb-item active">Settings</li>
+							</ol>
+<!--							<div class="o_setting_search">-->
+<!--								<input type="text" class="searchInput pull-right p-0 pb-1" placeholder="Search..." />-->
+<!--								<span class="searchIcon">-->
+<!--									<i class="fa fa-search" role="img" aria-label="Search" title="Search" />-->
+<!--								</span>-->
+<!--							</div>-->
+						</div>
+<!--						<header>-->
+<!--							<button string="Save" type="object" name="execute" class="oe_highlight" />-->
+<!--							<button string="Discard" type="object" name="cancel" special="cancel" data-hotkey="z" />-->
+<!--						</header>-->
+					</div>
+					<div class="o_setting_container">
+						<div class="settings_tab" />
+						<div class="settings">
+							<div class="app_settings_block" data-string="RSP Settings" string="RSP Settings" data-key="sales_res_setting">
+								<h2>Captcha Setting</h2>
+								<div class="row mt16 o_settings_container" name="sales_rsp_user_setting_container">
+									<div class="col-12 col-lg-6 o_setting_box" id="sales_rsp_config">
+										<div class="o_setting_left_pane">
+											<field name="login_captcha" readonly="1" />
+										</div>
+										<div class="o_setting_right_pane">
+											<label string="Login Captcha" for="login_captcha" />
+											<div class="text-muted">Enable Captcha during Login</div>
+										</div>
+										<br></br>
+										<div class="o_setting_left_pane">
+											<field name="signup_captcha" readonly="1" />
+										</div>
+										<div class="o_setting_right_pane">
+											<label string="Signup Captcha" for="signup_captcha" />
+											<div class="text-muted">Enable Captcha during Signup</div>
+										</div>
+									</div>
+								</div>
+								<h2>Payment Due Date Setting</h2>
+								<div class="row mt16 o_settings_container" name="sales_rsp_user_setting_container">
+									<div class="col-12 col-lg-6 o_setting_box" id="sales_rsp_config">
+										<div class="o_setting_right_pane">
+											<span class="o_form_label">Extend Payment Due Date</span>
+											<div class="content-group">
+												<div class="text-muted mb8">Set the number of days to extend the Payment Due Date</div>
+												<field name="extend_pdd" readonly="1" />
+												<label for="extend_pdd" string="Days" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<h2>Recipient Setting</h2>
+								<div class="row mt16 o_settings_container" name="sales_rsp_user_setting_container">
+									<div class="col-12 col-lg-6 o_setting_box" id="sales_rsp_config">
+										<div class="o_setting_right_pane">
+											<span class="o_form_label">Recipient Email IDs</span>
+											<div class="content-group">
+												<div class="text-muted mb8">Set the Email IDs which will be notified post Payment</div>
+												<field name="recipient_email_ids" style="width: 250%;" readonly="1" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<h2>OTP Authentication</h2>
+				                <div class="row mt16 o_settings_container" id="sales_rsp_user_setting_container">
+				                    <div class="col-12 col-lg-6 o_setting_box" id="sales_rsp_config">
+				                        <div class="o_setting_left_pane">
+											<field name="enable_email_otp_login" readonly="1" />
+				                        </div>
+				                        <div class="o_setting_right_pane">
+				                            <label for="enable_email_otp_login" string="Email One Time Password (OTP)"/>
+				                            <div class="text-muted">Enable to Restrict User to Login by entering OTP sent via Email</div>
+				                        </div>
+				                        <br></br>
+				                        <div class="o_setting_right_pane">
+											<span class="o_form_label">Email OTP Expiration Duration</span>
+				                            <div class="content-group">
+					                            <div class="text-muted mb8">Set the number of minutes by which Email OTP will Expire</div>
+				                                <field name="email_otp_expire_duration" readonly="1" />
+												<label for="email_otp_expire_duration" string="Minutes" />
+				                            </div>
+				                        </div>
+				                    </div>
+				                </div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</field>
+		</record>
+		<record id="sales_rsp_res_config_action" model="ir.actions.act_window">
+			<field name="name">Settings</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.config.settings</field>
+			<field name="view_id" ref="sales_res_config_form_view_inherit" />
+			<field name="view_mode">form</field>
+			<field name="target">inline</field>
+			<field name="context">{'module' : 'sales_res_setting', 'bin_size': False}</field>
+		</record>
+		<menuitem id="sales_rsp_res_config_menu" name="RSP Settings" parent="sale.sale_order_menu" sequence="15" groups="qcent_custom_access_group.group_custom_security,base.group_user" action="sales_rsp_res_config_action" />
+	</data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="res_partner_form_view_inhe" model="ir.ui.view">
+            <field name="name">res_partner_form_view_inhe</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='ref']" position="replace">
+                </xpath>
+                <xpath expr="//span[@name='address_name']" position="before">
+                    <field name="ref" string="Customer Number" placeholder="Customer Number..."/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <field name="pan"/>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                        <attribute name="string">GST Number</attribute>
+                        <attribute name="string">GST Number</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+    <record id="view_users_form_cust_code" model="ir.ui.view">
+            <field name="name">res.users.form.cust_code</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                    <label for="cust_code" string="cust_code"/>
+                    <h2><field name="cust_code"/></h2>
+                </xpath>
+            </field>
+        </record>
+</odoo>
